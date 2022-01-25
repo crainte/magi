@@ -1,0 +1,18 @@
+kind: Deployment
+
+descheduler:
+  deschedulerPolicy:
+    strategies:
+      RemoveDuplicates:
+        enabled: false
+      RemovePodsViolatingNodeTaints:
+        enabled: true
+      RemovePodsViolatingNodeAffinity:
+        enabled: true
+        params:
+          nodeAffinityType:
+          - requiredDuringSchedulingIgnoredDuringExecution
+      RemovePodsViolatingInterPodAntiAffinity:
+        enabled: true
+      LowNodeUtilization:
+        enabled: false
