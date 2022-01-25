@@ -1,0 +1,9 @@
+apiVersion: v2
+name: vector
+type: application
+version: 0.0.1
+appVersion: 0.0.1
+dependencies:
+  - name: vector-agent
+    version: 0.21.0
+    repository: https://helm.vector.dev
