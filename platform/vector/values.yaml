@@ -1,4 +1,6 @@
 vector-agent:
+  role: "Agent"
+
   customConfig:
     healthchecks:
       enabled: true
