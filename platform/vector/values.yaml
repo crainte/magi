@@ -3,7 +3,7 @@ vector:
 
   customConfig:
     api:
-      enabled: true
+      enabled: false
     healthchecks:
       enabled: true
       require_healthy: true
