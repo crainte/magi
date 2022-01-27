@@ -2,6 +2,8 @@ vector:
   role: "Agent"
 
   customConfig:
+    api:
+      enabled: true
     healthchecks:
       enabled: true
       require_healthy: true
