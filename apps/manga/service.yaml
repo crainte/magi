@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: lanraragi
+  namespace: manga
+spec:
+  ports:
+  - name: web
+    port: 3000
+    protocol: TCP
+    targetPort: web
+  selector:
+    app: lanraragi
+  sessionAffinity: None
+  type: ClusterIP
