@@ -1,0 +1,31 @@
+apiVersion: v1
+items:
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: lanraragi-content
+    namespace: manga
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 10Gi
+    storageClassName: dynamic-gluster
+    volumeMode: Filesystem
+    volumeName: pvc-95aa688c-e5a1-48bb-b865-ca606727544c
+---
+- apiVersion: v1
+  kind: PersistentVolumeClaim
+  metadata:
+    name: lanraragi-db
+    namespace: manga
+  spec:
+    accessModes:
+    - ReadWriteOnce
+    resources:
+      requests:
+        storage: 4Gi
+    storageClassName: dynamic-gluster
+    volumeMode: Filesystem
+    volumeName: pvc-34de2814-7c5b-4903-8763-4d040d63fae0
