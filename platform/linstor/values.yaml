@@ -75,7 +75,7 @@ operator:
       lvmThinPools:
         - name: lvm-thin
           thinVolume: thinpool
-          volumeGroup: linstor
+          volumeGroup: linstor_thinpool
           devicePaths:
             - /dev/sda
     sslSecret: ""
