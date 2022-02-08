@@ -86,7 +86,15 @@ operator:
             - /dev/sda
     sslSecret: ""
     automaticStorageType: None
-    affinity: {}
+    affinity:
+      nodeAffinity:
+        requiredDuringSchedulingIgnoredDuringExecution:
+          nodeSelectorTerms:
+            - matchExpressions:
+              - key: storage
+                operator: In
+                values:
+                  - "linstor"
     tolerations: []
     resources: {}
     monitoringImage: quay.io/piraeusdatastore/drbd-reactor:v0.4.4
