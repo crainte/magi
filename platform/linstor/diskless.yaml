@@ -1,0 +1,42 @@
+apiVersion: piraeus.linbit.com/v1
+kind: LinstorSatelliteSet
+metadata:
+  annotations:
+    meta.helm.sh/release-name: piraeus-op
+    meta.helm.sh/release-namespace: piraeus
+  finalizers:
+    - finalizer.linstor-node.linbit.com
+  generation: 9
+  labels:
+    app.kubernetes.io/managed-by: Helm
+  name: piraeus-ns-diskless
+  namespace: piraeus
+
+spec:
+  additionalEnv: null
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: kubernetes.io/hostname
+            operator: NotIn
+            values:
+            - worker0
+            - worker1
+            - worker2
+  automaticStorageType: None
+  controllerEndpoint: 'http://piraeus-op-cs.piraeus.svc:3370'
+  drbdRepoCred: ''
+  imagePullPolicy: IfNotPresent
+  kernelModuleInjectionImage: quay.io/piraeusdatastore/drbd9-focal
+  kernelModuleInjectionMode: Compile
+  kernelModuleInjectionResources: {}
+  linstorHttpsClientSecret: ''
+  monitoringImage: 'quay.io/piraeusdatastore/drbd-reactor:v0.3.0'
+  priorityClassName: ''
+  resources: {}
+  satelliteImage: 'quay.io/piraeusdatastore/piraeus-server:v1.13.0'
+  serviceAccountName: ''
+  sslSecret: null
+  storagePools: {}
