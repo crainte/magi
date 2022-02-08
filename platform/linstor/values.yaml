@@ -60,7 +60,7 @@ operator:
   controller:
     enabled: true
     controllerImage: quay.io/piraeusdatastore/piraeus-server:v1.17.0
-    dbConnectionURL: "jdbc:postgresql://postgresql.postgresql.svc.cluster.local:5432?user=linstor&password=camcipMackdeuhiehaydd"
+    dbConnectionURL: "jdbc:postgresql://postgresql.postgresql.svc.cluster.local:5432/linstor?user=linstor&password=camcipMackdeuhiehaydd"
     luksSecret: ""
     dbCertSecret: ""
     dbUseClientCert: false
