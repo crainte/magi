@@ -24,7 +24,7 @@ vector:
           filesystems:
             excludes: ["binfmt_misc"]
           mountPoints:
-            excludes: ["*/proc/sys/fs/binfmt_misc"] 
+            excludes: ["/proc/sys/fs/binfmt_misc"] 
     sinks:
       syslog:
         type: "socket"
