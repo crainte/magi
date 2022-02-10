@@ -36,7 +36,7 @@ csi:
   csiProvisionerWorkerThreads: 10
   csiSnapshotterWorkerThreads: 10
   csiResizerWorkerThreads: 10
-  controllerReplicas: 1
+  controllerReplicas: 3
   nodeAffinity: {}
   #  requiredDuringSchedulingIgnoredDuringExecution:
   #    nodeSelectorTerms:
@@ -80,7 +80,7 @@ operator:
         operator: "Exists"
         effect: "NoSchedule"
     resources: {}
-    replicas: 1
+    replicas: 3
     additionalEnv: []
     additionalProperties: {}
   satelliteSet:
