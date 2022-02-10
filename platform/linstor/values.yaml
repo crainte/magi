@@ -10,7 +10,7 @@ etcd:
   persistentVolume:
     enabled: true
     storage: 1Gi
-    storageClassName: "-"
+    storageClass: "-"
   replicas: 1 # How many instances of etcd will be added to the initial cluster.
   resources: {} # resource requirements for etcd containers
   image:
