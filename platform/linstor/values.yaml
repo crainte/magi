@@ -1,4 +1,4 @@
-IHaveBackedUpAllMyLinstorResources: false
+IHaveBackedUpAllMyLinstorResources: true
 global:
   imagePullPolicy: IfNotPresent # empty pull policy means k8s default is used ("always" if tag == ":latest", "ifnotpresent" else)
   setSecurityContext: true # Force non-privileged containers to run as non-root users
@@ -60,7 +60,7 @@ operator:
   controller:
     enabled: true
     controllerImage: quay.io/piraeusdatastore/piraeus-server:v1.17.0
-    dbConnectionURL: "jdbc:postgresql://postgresql.postgresql.svc.cluster.local:5432/linstor?user=linstor&password=camcipMackdeuhiehaydd"
+    dbConnectionURL: k8s
     luksSecret: ""
     dbCertSecret: ""
     dbUseClientCert: false
