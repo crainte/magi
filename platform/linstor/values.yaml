@@ -1,3 +1,6 @@
+pv-hostpath:
+  nodes: ["172.16.32.26", "172.16.32.28", "172.16.32.19"]
+
 IHaveBackedUpAllMyLinstorResources: true
 global:
   imagePullPolicy: IfNotPresent # empty pull policy means k8s default is used ("always" if tag == ":latest", "ifnotpresent" else)
