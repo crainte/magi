@@ -1,0 +1,15 @@
+apiVersion: v2
+name: piraeus
+description: A Helm chart for Piraeus Operator
+type: application
+version: 1.7.1
+appVersion: 1.7.1
+home: https://piraeus.io/
+dependencies:
+  - name: pv-hostpath
+    version: 0.3.1
+    appVersion: 0.3.0
+    repository: "https://charts.linstor.io"
+  - name: etcd
+    version: 0.7.5
+    condition: etcd.enabled
