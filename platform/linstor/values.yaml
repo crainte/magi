@@ -4,7 +4,15 @@ global:
   setSecurityContext: true # Force non-privileged containers to run as non-root users
 # Dependency charts
 etcd:
-  enabled: false
+  enabled: true
+  persistentVolume:
+    enabled: true
+    storage: 1Gi
+  replicas: 1 # How many instances of etcd will be added to the initial cluster.
+  resources: {} # resource requirements for etcd containers
+  image:
+    repository: gcr.io/etcd-development/etcd
+    tag: v3.4.15
 stork:
   enabled: false
   storkImage: docker.io/openstorage/stork:2.8.2
@@ -60,7 +68,7 @@ operator:
   controller:
     enabled: true
     controllerImage: quay.io/piraeusdatastore/piraeus-server:v1.17.0
-    dbConnectionURL: k8s
+    dbConnectionURL: ""
     luksSecret: ""
     dbCertSecret: ""
     dbUseClientCert: false
@@ -109,4 +117,4 @@ haController:
   affinity: {}
   tolerations: []
   resources: {}
-  replicas: 1
+  replicas: 3
