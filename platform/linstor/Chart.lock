@@ -1,9 +1,0 @@
-dependencies:
-- name: pv-hostpath
-  repository: https://charts.linstor.io
-  version: 0.3.1
-- name: etcd
-  repository: ""
-  version: 0.7.5
-digest: sha256:af0198529e5ff21947d77a3dc7a58e854ac08e7e5340432bff0204a58c881547
-generated: "2022-02-10T11:16:55.283488174-06:00"
