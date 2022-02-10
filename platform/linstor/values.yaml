@@ -4,7 +4,7 @@ global:
   setSecurityContext: true # Force non-privileged containers to run as non-root users
 # Dependency charts
 etcd:
-  enabled: true
+  enabled: false
   persistentVolume:
     enabled: true
     storage: 1Gi
@@ -69,7 +69,7 @@ operator:
   controller:
     enabled: true
     controllerImage: quay.io/piraeusdatastore/piraeus-server:v1.17.0
-    dbConnectionURL: ""
+    dbConnectionURL: k8s
     luksSecret: ""
     dbCertSecret: ""
     dbUseClientCert: false
