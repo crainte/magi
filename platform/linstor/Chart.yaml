@@ -6,6 +6,9 @@ version: 1.7.1
 appVersion: 1.7.1
 home: https://piraeus.io/
 dependencies:
-  - name: "etcd"
-    version: "0.7.5"
+  - name: pv-hostpath
+    version: 0.3.1
+    appVersion: 0.3.0
+  - name: etcd
+    version: 0.7.5
     condition: etcd.enabled
