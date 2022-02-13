@@ -8,11 +8,12 @@ spec:
   priorityClassName: {{ .Values.priorityClassName | default "" | quote }}
   # TODO: switch to k8s db by default
   dbConnectionURL:  {{ .Values.operator.controller.dbConnectionURL | default (print "etcd://" .Release.Name "-etcd:2379") }}
-{{- if .Values.operator.controller.luksSecret }}
-  luksSecret: {{ .Values.operator.controller.luksSecret }}
-{{- else }}
-  luksSecret: {{ template "operator.fullname" . }}-passphrase
-{{- end}}
+#{{- if .Values.operator.controller.luksSecret }}
+#  luksSecret: {{ .Values.operator.controller.luksSecret }}
+#{{- else }}
+#  luksSecret: {{ template "operator.fullname" . }}-passphrase
+#{{- end}}
+  luksSecret: ""
   sslSecret: {{ .Values.operator.controller.sslSecret }}
   dbCertSecret: {{ .Values.operator.controller.dbCertSecret | default "" }}
   dbUseClientCert: {{ .Values.operator.controller.dbUseClientCert }}
