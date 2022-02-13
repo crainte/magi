@@ -73,7 +73,7 @@ operator:
     luksSecret: ""
     dbCertSecret: ""
     dbUseClientCert: false
-    sslSecret: ""
+    sslSecret: "control-secret"
     affinity: {}
     tolerations:
       - key: node-role.kubernetes.io/master
@@ -93,7 +93,7 @@ operator:
           volumeGroup: linstor_thinpool
           devicePaths:
             - /dev/sda
-    sslSecret: ""
+    sslSecret: "node-secret"
     automaticStorageType: None
     affinity: {}
       #  nodeAffinity:
