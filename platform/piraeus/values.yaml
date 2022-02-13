@@ -70,7 +70,6 @@ operator:
     enabled: true
     controllerImage: quay.io/piraeusdatastore/piraeus-server:v1.17.0
     dbConnectionURL: k8s
-    logLevel: "trace"
     luksSecret: ""
     dbCertSecret: ""
     dbUseClientCert: false
