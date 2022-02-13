@@ -84,6 +84,7 @@ operator:
     replicas: 3
     additionalEnv: []
     additionalProperties: {}
+    masterPassphrase: ""
   satelliteSet:
     enabled: true
     satelliteImage: quay.io/piraeusdatastore/piraeus-server:v1.17.0
