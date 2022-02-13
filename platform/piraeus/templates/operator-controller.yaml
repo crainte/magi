@@ -51,7 +51,7 @@ data:
 {{- if $secret }}
   MASTER_PASSPHRASE: {{ $secret.data.MASTER_PASSPHRASE | quote }}
 {{- else }}
-  MASTER_PASSPHRASE: {{ .Values.operator.controller.masterPassphrase | default (randAlphaNum 40) | b64enc | quote }}
+  MASTER_PASSPHRASE: {{ .Values.operator.controller.masterPassphrase | b64enc | quote }}
 {{- end }}
 {{- end }}
 {{- end }}
