@@ -88,7 +88,7 @@ operator:
     masterPassphrase: ""
   satelliteSet:
     enabled: true
-    satelliteImage: quay.io/piraeusdatastore/piraeus-server:v1.18.0-rc.3
+    satelliteImage: quay.io/piraeusdatastore/piraeus-server:v1.18.0-rc3
     storagePools:
       lvmThinPools:
         - name: lvm-thin
