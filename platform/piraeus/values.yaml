@@ -25,7 +25,7 @@ stork:
   podsecuritycontext: {}
 csi:
   enabled: true
-  pluginImage: quay.io/piraeusdatastore/piraeus-csi:v0.18.0
+  pluginImage: quay.io/piraeusdatastore/piraeus-csi:v0.17.0
   csiAttacherImage: k8s.gcr.io/sig-storage/csi-attacher:v3.4.0
   csiLivenessProbeImage: k8s.gcr.io/sig-storage/livenessprobe:v2.5.0
   csiNodeDriverRegistrarImage: k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.4.0
@@ -53,8 +53,6 @@ csi:
   kubeletPath: /var/lib/kubelet
 priorityClassName: ""
 drbdRepoCred: "" # <- Specify the kubernetes secret name here
-linstorSslMethod: "manual" # <- If set to 'helm' or 'cert-manager' the certificates will be generated automatically
-linstorHttpsMethod: "manual" # <- If set to 'helm' or 'cert-manager' the certificates will be generated automatically
 linstorHttpsControllerSecret: "" # <- name of secret containing linstor server certificates+key. See docs/security.md
 linstorHttpsClientSecret: "" # <- name of secret containing linstor client certificates+key. See docs/security.md
 controllerEndpoint: "" # <- override to the generated controller endpoint. use if controller is not deployed via operator
@@ -63,14 +61,14 @@ psp:
   unprivilegedRole: ""
 operator:
   replicas: 1 # <- number of replicas for the operator deployment
-  image: quay.io/piraeusdatastore/piraeus-operator:v1.8.0-rc.1
+  image: quay.io/piraeusdatastore/piraeus-operator:latest
   affinity: {}
   tolerations: []
   resources: {}
   podsecuritycontext: {}
   controller:
     enabled: true
-    controllerImage: quay.io/piraeusdatastore/piraeus-server:v1.18.0-rc.3
+    controllerImage: quay.io/piraeusdatastore/piraeus-server:v1.17.0
     dbConnectionURL: k8s
     luksSecret: ""
     dbCertSecret: ""
@@ -88,7 +86,7 @@ operator:
     masterPassphrase: ""
   satelliteSet:
     enabled: true
-    satelliteImage: quay.io/piraeusdatastore/piraeus-server:v1.18.0-rc3
+    satelliteImage: quay.io/piraeusdatastore/piraeus-server:v1.17.0
     storagePools:
       lvmThinPools:
         - name: lvm-thin
@@ -109,15 +107,15 @@ operator:
       #              - "linstor"
     tolerations: []
     resources: {}
-    monitoringImage: quay.io/piraeusdatastore/drbd-reactor:v0.5.3
-    kernelModuleInjectionImage: quay.io/piraeusdatastore/drbd9-bionic:v9.1.6
+    monitoringImage: quay.io/piraeusdatastore/drbd-reactor:v0.4.4
+    kernelModuleInjectionImage: quay.io/piraeusdatastore/drbd9-bionic:v9.1.4
     kernelModuleInjectionMode: Compile
     kernelModuleInjectionAdditionalSourceDirectory: ""
     kernelModuleInjectionResources: {}
     additionalEnv: []
 haController:
   enabled: true
-  image: quay.io/piraeusdatastore/piraeus-ha-controller:v0.3.0
+  image: quay.io/piraeusdatastore/piraeus-ha-controller:v0.2.0
   affinity: {}
   tolerations: []
   resources: {}
