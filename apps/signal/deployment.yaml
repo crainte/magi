@@ -24,6 +24,9 @@ spec:
       containers:
       - image: bbernhard/signal-cli-rest-api
         imagePullPolicy: IfNotPresent
+        env:
+          - name: MODE
+            value: native
         livenessProbe:
           failureThreshold: 10
           httpGet:
