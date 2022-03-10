@@ -4,6 +4,6 @@ type: application
 version: 0.0.0
 dependencies:
   - name: descheduler
-    version: 0.22.1
-    appVersion: 0.22.1
+    version: 0.23.2
+    appVersion: 0.23.2
     repository: https://kubernetes-sigs.github.io/descheduler/
