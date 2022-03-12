@@ -67,7 +67,7 @@ spec:
       volumes:
       - name: data
         persistentVolumeClaim:
-          claimName: lanraragi-db
+          claimName: database
       - name: content
         persistentVolumeClaim:
-          claimName: lanraragi-content
+          claimName: content
