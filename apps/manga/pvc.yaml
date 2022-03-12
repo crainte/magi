@@ -28,3 +28,27 @@ spec:
   storageClassName: dynamic-gluster
   volumeMode: Filesystem
   volumeName: pvc-34de2814-7c5b-4903-8763-4d040d63fae0
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: content
+  namespace: manga
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 10Gi
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: database
+  namespace: manga
+spec:
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 4Gi
