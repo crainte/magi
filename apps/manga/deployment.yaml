@@ -22,7 +22,7 @@ spec:
         app: lanraragi
     spec:
       containers:
-      - image: difegue/lanraragi:v.0.8.4
+      - image: difegue/lanraragi:v.0.8.5
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 10
