@@ -3,6 +3,8 @@ kind: Ingress
 metadata:
   name: kavita
   namespace: kavita
+  annotations:
+    kubernetes.io/ingress.class: nginx
   labels:
     optix.io/dns: public
 spec:
