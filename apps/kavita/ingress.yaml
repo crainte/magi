@@ -16,7 +16,7 @@ spec:
           service:
             name: kavita
             port:
-              number: 5080
+              number: 5000
         path: /
         pathType: Prefix
   tls:
