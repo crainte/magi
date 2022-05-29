@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+  labels:
+    optix.io/dns: public
+  name: komga
+spec:
+  rules:
+  - host: komga.hybridoptix.net
+    http:
+      paths:
+      - backend:
+          service:
+            name: komga
+            port:
+              number: 8080
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - komga.hybridoptix.net
