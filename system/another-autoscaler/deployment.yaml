@@ -1,0 +1,41 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: another-autoscaler
+  labels:
+    app: another-autoscaler
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: another-autoscaler
+  template:
+    metadata:
+      labels:
+        app: another-autoscaler
+    spec:
+      serviceAccountName: another-autoscaler
+      containers:
+      - name: another-autoscaler
+        image: ghcr.io/dignajar/another-autoscaler:0.7
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+            name: another-autoscaler
+        securityContext:
+          runAsNonRoot: true
+          allowPrivilegeEscalation: false
+          readOnlyRootFilesystem: true
+          runAsUser: 10001
+          runAsGroup: 10001
+          capabilities:
+            drop:
+              - ALL
+        resources:
+          limits:
+            cpu: 300m
+            memory: 256Mi
+          requests:
+            cpu: 100m
+            memory: 128Mi
