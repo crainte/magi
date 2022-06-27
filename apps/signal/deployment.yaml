@@ -26,10 +26,8 @@ spec:
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 10
-          httpGet:
-            path: /
-            port: web
-            scheme: HTTP
+          tcpSocket:
+            port: 8080
           initialDelaySeconds: 60
           periodSeconds: 10
           successThreshold: 1
@@ -41,10 +39,8 @@ spec:
           protocol: TCP
         readinessProbe:
           failureThreshold: 3
-          httpGet:
-            path: /
-            port: web
-            scheme: HTTP
+          tcpSocket:
+            port: 8080
           initialDelaySeconds: 60
           periodSeconds: 10
           successThreshold: 1
