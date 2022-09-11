@@ -23,9 +23,6 @@ spec:
       source:
         repoURL: {{ $.Values.gitops.repo }}
         path: '{{ `{{path}}` }}'
-        helm:
-          valueFiles:
-            - secrets+gpg-import:///helm-secrets-private-key/key.asc?secrets.yaml
       syncPolicy:
         automated:
           prune: true

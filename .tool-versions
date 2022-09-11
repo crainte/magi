@@ -1,0 +1,3 @@
+helm 3.9.0
+kubeseal 0.18.2
+argocd 2.4.11

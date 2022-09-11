@@ -1,0 +1,4 @@
+#!/bin/bash
+
+PASSWORD="$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d -w0)"
+argocd login argocd.hybridoptix.net --username admin --password "${PASSWORD}" --grpc-web

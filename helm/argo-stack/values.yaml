@@ -1,0 +1,8 @@
+gitops:
+  repo: https://github.com/crainte/magi
+  revision: HEAD
+stacks:
+  - name: system
+    namespace: kube-system
+  - name: platform
+  - name: apps
