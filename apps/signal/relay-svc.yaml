@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: email-to-signal
+  namespace: signal
+spec:
+  ports:
+  - name: mail
+    port: 8025
+    protocol: TCP
+    targetPort: mail
+  selector:
+    app: email-to-signal
+  sessionAffinity: None
+  type: ClusterIP
